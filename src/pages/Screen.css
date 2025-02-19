@@ -1,0 +1,10 @@
+.pictureScreen {
+    padding: 10px;
+    height: 100%;
+}
+
+.screenTitle {
+    font-size: 40px;
+    font-weight: 900;
+    margin-bottom: 40px;
+}

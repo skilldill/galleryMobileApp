@@ -1,24 +1,34 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
-import './Home.css';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from "@ionic/react";
+import { GalleryList } from "../components/GalleryList";
+import { ModalsProvider } from "react-mobile-modals";
+
+
+
+const PICTURES = [
+  { src: "first", title: "Monument" },
+  { src: "second", title: "Nature vibes" },
+  { src: "third", title: "Coffee and sea" },
+];
 
 const Home: React.FC = () => {
   return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Blank</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent fullscreen>
-        <IonHeader collapse="condense">
+    <ModalsProvider>
+      <IonPage>
+        <IonHeader>
           <IonToolbar>
-            <IonTitle size="large">Blank</IonTitle>
+            <IonTitle>Vibe gallery</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer />
-      </IonContent>
-    </IonPage>
+        <IonContent fullscreen>
+          <IonHeader collapse="condense">
+            <IonToolbar>
+              <IonTitle size="large">Gallery</IonTitle>
+            </IonToolbar>
+          </IonHeader>
+          <GalleryList pictures={PICTURES}/>
+        </IonContent>
+      </IonPage>
+    </ModalsProvider>
   );
 };
 
